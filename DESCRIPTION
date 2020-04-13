@@ -1,5 +1,5 @@
 Package: kneer
-Title: Knee point detection using maximum curvature
+Title: Knee Point Detection
 Version: 0.1.0
 Authors@R: 
     person(given = "Mukund Madhav",

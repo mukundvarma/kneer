@@ -17,17 +17,36 @@ NULL
 #' @slot smooth Method for smoothing the curve - either smooth.spline or loess 
 #' @slot curve convex or concave
 #' @slot direction decreasing or increasing
-#' 
-#' @name KneeLocator
-#' @rdname kneer
-#' @aliases KneeLocator,KneeLocator-class
-#' @exportClass KneeLocator
-#' 
+#' @slot y.smooth Smoothed values for y coordinates
+#' @slot x.normalized Min-max scaled x coordinates
+#' @slot y.normalized Min-max scaled y coordinates
+#' @slot x.difference x coordinates for difference curve
+#' @slot y.difference y coordinates for difference curve
+#' @slot x.difference.maxima maxima locations for difference curve
+#' @slot y.difference.maxima maxima locations for difference curve
+#' @slot x.difference.minima minima locations for difference curve
+#' @slot y.difference.minima momima locations for difference curve
+#' @slot N number of x, y values
+#' @slot threshold Threshold for determining maxima
+#' @slot all_knees List of knees of curve
+#' @slot all_norm_knees List of knees for normalized curve
+#' @slot all_knees_y List of y coordinates of knee of curve
+#' @slot all_norm_knees_y List of y coordinates of knee for normalized curve
+#' @slot maxima_indices Indices for maxima
+#' @slot minima_indices Indices for minima
+#' @slot knee Final knee result - x coordinate
+#' @slot y_at_knee Final knee result - y coordinate
+#'
+#' @exportClass KneeLocator 
 KneeLocator <- setClass(
     Class = "KneeLocator",
     slots = list(
         x = "vector",
         y = "vector",
+        S = "numeric",
+        smooth = "character",
+        curve = "character",
+        direction = "character",
         y.smooth = "vector",
         x.normalized = "vector",
         y.normalized = "vector",
@@ -37,10 +56,6 @@ KneeLocator <- setClass(
         y.difference.maxima = "vector",
         x.difference.minima = "vector",
         y.difference.minima = "vector",
-        S = "numeric",
-        curve = "character",
-        direction = "character",
-        smooth = "character",
         N = "numeric",
         threshold = "numeric",
         all_knees = "vector",
