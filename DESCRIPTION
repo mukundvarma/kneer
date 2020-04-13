@@ -1,13 +1,26 @@
-Package: kneedr
-Title: What the Package Does (One Line, Title Case)
-Version: 0.0.0.9000
+Package: kneer
+Title: Knee point detection using maximum curvature
+Version: 0.1.0
 Authors@R: 
-    person(given = "First",
-           family = "Last",
+    person(given = "Mukund Madhav",
+           family = "Varma",
            role = c("aut", "cre"),
-           email = "first.last@example.com",
-           comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: What the package does (one paragraph).
-License: What license it uses
+           email = "mmv1301@gmail.com",
+           comment = c(ORCID = "0000-0002-9254-1247"))
+Description: kneer is an R implementation of the kneedle algorithm proposed by
+	Satopaa et al. in the paper titled 'Finding a "Kneedle" in a Haystack:
+	Detecting Knee Points in System Behavior.' published in the 2011 31st International
+	Conference on Distributed Computing Systems Workshops. Kneedle works by finding
+	points of maximum curvature in curves. This package implements functions to easily run the kneedle algorithm to calculate knee points, and a ggplot2 `stat` layer for overlaying
+	calculated knees on top of point or line curves. 
+License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
+RoxygenNote: 7.1.0
+Collate: 
+    'transformations.R'
+    'kneer.R'
+    'plotting.R'
+Imports:
+    methods, stats, ggplot2
+
